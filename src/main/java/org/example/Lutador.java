@@ -1,8 +1,10 @@
 package org.example;
 
-import javax.swing.*;
+
 
 public class Lutador {
+
+
 
     // Atributos
     private String nome;
@@ -17,18 +19,41 @@ public class Lutador {
 
     public void apresentar(){
 
+        System.out.println("_______________________________________________________");
+        System.out.println();
+        System.out.println("CHEGOU A HORA! Apresentamos o lutador " + this.getNome());
+        System.out.println();
+        System.out.println("Diretamente de " + this.getNacionalidade());
+        System.out.println("Com " + this.getIdade() + " anos e " + this.altura + " de altura");
+        System.out.println("Pesando " + this.getPeso() + "Kg" );
+        System.out.println("Com " + this.getVitorias() + " vitórias ");
+        System.out.println( this.getDerrotas() + " derrotas ");
+        System.out.println("E com " + this.getEmpates() + " empate(s)! ");
+        System.out.println("_______________________________________________________");
+
     }
 
     public void status(){
+        System.out.println();
+        System.out.println(this.getNome() + " é um peso " + this.getCategoria());
+        System.out.println();
+        System.out.println("Ganhou " + this.getVitorias() + " vezes ");
+        System.out.println("Perdeu " + this.getDerrotas() + " vezes ");
+        System.out.println("Empatou " + this.getEmpates() + " vezes ");
 
     }
 
     public void ganharLuta(){
+        this.setDerrotas(this.getDerrotas() + 1);
 
     }
 
     public void perderLuta(){
 
+    }
+
+    public void empatarLuta(){
+        this.setEmpates(this.getEmpates() + 1);
     }
 
 
@@ -42,7 +67,7 @@ public class Lutador {
         this.nacionalidade = na;
         this.idade = id;
         this.altura = al;
-        this.peso = pe;
+        this.setPeso(pe);
         this.vitorias = vi;
         this.derrotas = de;
         this.empates = em;
